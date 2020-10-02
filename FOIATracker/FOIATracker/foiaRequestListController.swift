@@ -34,9 +34,10 @@ extension foiaRequestListController: UITableViewDataSource {
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "request")!
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "request") as! requestCell
         
-        cell.textLabel?.text = self.requests[indexPath.row]
+        cell.requestLabel.text = self.requests[indexPath.row]
+        cell.requestDescription.text = "Lorem ipsum dolor sit amet"
         
         return cell
     }

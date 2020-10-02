@@ -15,6 +15,7 @@
 		54C1523C2526C595006A41AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54C1523A2526C595006A41AE /* LaunchScreen.storyboard */; };
 		54C152472526C596006A41AE /* FOIATrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C152462526C596006A41AE /* FOIATrackerTests.swift */; };
 		54C152522526C596006A41AE /* FOIATrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C152512526C596006A41AE /* FOIATrackerUITests.swift */; };
+		54C152692526D476006A41AE /* requestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C152682526D476006A41AE /* requestCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		54C1524D2526C596006A41AE /* FOIATrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FOIATrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C152512526C596006A41AE /* FOIATrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FOIATrackerUITests.swift; sourceTree = "<group>"; };
 		54C152532526C596006A41AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54C152682526D476006A41AE /* requestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requestCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				54C152312526C593006A41AE /* SceneDelegate.swift */,
 				54C152332526C593006A41AE /* foiaRequestListController.swift */,
 				54C152352526C593006A41AE /* Main.storyboard */,
+				54C152682526D476006A41AE /* requestCell.swift */,
 				54C152382526C595006A41AE /* Assets.xcassets */,
 				54C1523A2526C595006A41AE /* LaunchScreen.storyboard */,
 				54C1523D2526C595006A41AE /* Info.plist */,
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54C152342526C593006A41AE /* foiaRequestListController.swift in Sources */,
+				54C152692526D476006A41AE /* requestCell.swift in Sources */,
 				54C152302526C593006A41AE /* AppDelegate.swift in Sources */,
 				54C152322526C593006A41AE /* SceneDelegate.swift in Sources */,
 			);
