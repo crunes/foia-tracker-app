@@ -11,13 +11,15 @@ class foiaRequestListController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var requests: [String] = [] // potentially no requests, so app doesn't crash
+    var requests: [Request] = [] // potentially no requests, so app doesn't crash
+    var requestService: RequestService!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        requests = ["Request 873641", "Request 831648", "Request 17267", "Request 873641", "Request 831648", "Request 17267", "Request 873641", "Request 831648", "Request 17267","Request 873641", "Request 831648", "Request 17267", "Request 873641", "Request 831648", "Request 17267", "Request 873641", "Request 831648", "Request 17267", "Request 873641", "Request 831648", "Request 17267"]
+        self.requestService = RequestService()
+        self.requests = self.requestService.getRequests()
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
@@ -36,8 +38,9 @@ extension foiaRequestListController: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "request") as! requestCell
         
-        cell.requestLabel.text = self.requests[indexPath.row]
-        cell.requestDescription.text = "Lorem ipsum dolor sit amet"
+        let currentRequest = self.requests[indexPath.row]
+        cell.requestLabel.text = currentRequest.department
+        cell.requestDescription.text = currentRequest.description
         
         return cell
     }

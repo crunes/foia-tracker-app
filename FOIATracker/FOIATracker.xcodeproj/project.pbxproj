@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54774068252FF6AE009EBFFE /* request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54774067252FF6AE009EBFFE /* request.swift */; };
+		5477406D252FFEEE009EBFFE /* requestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5477406C252FFEEE009EBFFE /* requestService.swift */; };
 		54C152302526C593006A41AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C1522F2526C593006A41AE /* AppDelegate.swift */; };
 		54C152322526C593006A41AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C152312526C593006A41AE /* SceneDelegate.swift */; };
 		54C152342526C593006A41AE /* foiaRequestListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C152332526C593006A41AE /* foiaRequestListController.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		54774067252FF6AE009EBFFE /* request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = request.swift; sourceTree = "<group>"; };
+		5477406C252FFEEE009EBFFE /* requestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requestService.swift; sourceTree = "<group>"; };
 		54C1522C2526C593006A41AE /* FOIATracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FOIATracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C1522F2526C593006A41AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54C152312526C593006A41AE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +82,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54774075253002AC009EBFFE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				54C152682526D476006A41AE /* requestCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		54774076253002B7009EBFFE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				54C152332526C593006A41AE /* foiaRequestListController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		54774077253002E8009EBFFE /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5477406C252FFEEE009EBFFE /* requestService.swift */,
+				54774067252FF6AE009EBFFE /* request.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		54C152232526C593006A41AE = {
 			isa = PBXGroup;
 			children = (
@@ -101,11 +130,12 @@
 		54C1522E2526C593006A41AE /* FOIATracker */ = {
 			isa = PBXGroup;
 			children = (
+				54774077253002E8009EBFFE /* Data */,
 				54C1522F2526C593006A41AE /* AppDelegate.swift */,
 				54C152312526C593006A41AE /* SceneDelegate.swift */,
-				54C152332526C593006A41AE /* foiaRequestListController.swift */,
+				54774076253002B7009EBFFE /* Controllers */,
+				54774075253002AC009EBFFE /* Views */,
 				54C152352526C593006A41AE /* Main.storyboard */,
-				54C152682526D476006A41AE /* requestCell.swift */,
 				54C152382526C595006A41AE /* Assets.xcassets */,
 				54C1523A2526C595006A41AE /* LaunchScreen.storyboard */,
 				54C1523D2526C595006A41AE /* Info.plist */,
@@ -261,9 +291,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5477406D252FFEEE009EBFFE /* requestService.swift in Sources */,
 				54C152342526C593006A41AE /* foiaRequestListController.swift in Sources */,
 				54C152692526D476006A41AE /* requestCell.swift in Sources */,
 				54C152302526C593006A41AE /* AppDelegate.swift in Sources */,
+				54774068252FF6AE009EBFFE /* request.swift in Sources */,
 				54C152322526C593006A41AE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
