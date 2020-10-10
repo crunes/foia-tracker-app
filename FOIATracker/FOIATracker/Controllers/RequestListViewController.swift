@@ -47,22 +47,29 @@ extension RequestListViewController: UITableViewDataSource {
 extension RequestListViewController: UITableViewDelegate {
     //MARK: Delegate
     
-    //func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        //let response = receivedResponseAction(at: indexPath)
+        let response = receivedResponseAction(at: indexPath)
         
-       // return UISwipeActionsConfiguration(actions: [delete, response])
-    //}
+        return UISwipeActionsConfiguration(actions: [response])
+    }
     
-    //func receivedResponseAction(at indexPath: IndexPath) -> UIContextualAction {
-        //let request = requests[indexPath.row]
-        //let action = UIContextualAction(style: .normal, title: "Received Response") { (action, view, completion) in
-            //request.receivedResponse = !request.receivedResponse
-            //completion(true)
-        //}
+    func receivedResponseAction(at indexPath: IndexPath) -> UIContextualAction {
+        let request = requests[indexPath.row]
+        let action = UIContextualAction(style: .normal, title: "Received Response") { (action, view, completion) in
+            request.receivedResponse = !request.receivedResponse
+            completion(true)
+        }
         
+        let flame = UIImageView(frame: CGRect(x: 0, y: 65, width: 25, height: 30))
+        flame.tintColor = .systemRed
         
-    //}
+        action.image = UIImage(systemName: "flame.fill")
+        action.backgroundColor = request.receivedResponse ? .green : .orange
+        
+        return action
+        
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if
