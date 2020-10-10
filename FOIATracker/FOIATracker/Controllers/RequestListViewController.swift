@@ -48,36 +48,47 @@ extension RequestListViewController: UITableViewDelegate {
     //MARK: Delegate
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
-        let response = receivedResponseAction(at: indexPath)
-        
-        return UISwipeActionsConfiguration(actions: [response])
-    }
-    
-    func receivedResponseAction(at indexPath: IndexPath) -> UIContextualAction {
-        let request = requests[indexPath.row]
-        let action = UIContextualAction(style: .normal, title: "Received Response") { (action, view, completion) in
-            request.receivedResponse = !request.receivedResponse
-            completion(true)
-        }
-        
-        let flame = UIImageView(frame: CGRect(x: 0, y: 65, width: 25, height: 30))
-        flame.tintColor = .systemRed
-        
-        action.image = UIImage(systemName: "flame.fill")
-        action.backgroundColor = request.receivedResponse ? .green : .orange
-        
-        return action
-        
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if
-           let cell = self.tableView.cellForRow(at: indexPath) as? RequestCell,
-           let confirmedRequest = cell.request
+            // Check that the cell is indeed an instance of the RequestCell class
+            let cell = self.tableView.cellForRow(at: indexPath) as? RequestCell,
+            let confirmedRequest = cell.request
         {
-            confirmedRequest.receivedResponse = true
-            cell.accessoryType = confirmedRequest.receivedResponse ? .checkmark : .none
+            // Get current state and remove accessory type
+            let status = confirmedRequest.receivedResponse
+            let title = status ? "Awaiting response" : "Received response"
+            
+            // Create the image
+            let tray = UIImageView(frame: CGRect(x: 0, y: 65, width: 25, height: 30))
+            tray.image = UIImage(systemName: "tray.full.fill")
+            tray.tintColor = .systemTeal
+            
+            // Define the swipe action
+            let action = UIContextualAction(style: .normal, title: title,
+                handler: { (action, view, completionHandler) in
+                    
+                // Update data source when user taps action
+                    confirmedRequest.receivedResponse = !confirmedRequest.receivedResponse
+                    cell.accessoryView = confirmedRequest.receivedResponse ? tray : .none
+                    completionHandler(true)
+              })
+            
+            action.image = .none
+            action.backgroundColor = status ? .gray : .systemTeal
+            
+            return UISwipeActionsConfiguration(actions: [action])
         }
+        
+        return nil
     }
+    
+    // OLD FUNCTION
+    //func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //if
+           //let cell = self.tableView.cellForRow(at: indexPath) as? RequestCell,
+           //let confirmedRequest = cell.request
+        //{
+            //confirmedRequest.receivedResponse = true
+            //cell.accessoryType = confirmedRequest.receivedResponse ? .checkmark : .none
+        //}
+    //}
 }

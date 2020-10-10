@@ -15,7 +15,7 @@ class RequestCell: UITableViewCell {
         didSet {
             self.requestLabel.text = request?.department
             self.requestDescription.text = request?.description
-            self.accessoryType = request!.receivedResponse ? .checkmark : .none
+            self.accessoryType = .none
         }
     }
     
