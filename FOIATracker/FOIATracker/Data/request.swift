@@ -10,12 +10,12 @@ import Foundation
 class Request {
     var department: String
     var description: String
-    var daysSinceFiled: Int
+    var receivedResponse: Bool = false
     
-    init(for department: String, description: String, daysSinceFiled: Int) {
+    init(for department: String, description: String, receivedResponse: Bool) {
         self.department = department
         self.description = description
-        self.daysSinceFiled = daysSinceFiled
+        self.receivedResponse = receivedResponse
     }
 }
 

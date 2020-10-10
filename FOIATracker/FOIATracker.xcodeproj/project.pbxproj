@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		54774068252FF6AE009EBFFE /* request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54774067252FF6AE009EBFFE /* request.swift */; };
-		5477406D252FFEEE009EBFFE /* requestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5477406C252FFEEE009EBFFE /* requestService.swift */; };
+		54774068252FF6AE009EBFFE /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54774067252FF6AE009EBFFE /* Request.swift */; };
+		5477406D252FFEEE009EBFFE /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5477406C252FFEEE009EBFFE /* RequestService.swift */; };
 		54C152302526C593006A41AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C1522F2526C593006A41AE /* AppDelegate.swift */; };
 		54C152322526C593006A41AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C152312526C593006A41AE /* SceneDelegate.swift */; };
-		54C152342526C593006A41AE /* foiaRequestListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C152332526C593006A41AE /* foiaRequestListController.swift */; };
+		54C152342526C593006A41AE /* RequestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C152332526C593006A41AE /* RequestListViewController.swift */; };
 		54C152372526C593006A41AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54C152352526C593006A41AE /* Main.storyboard */; };
 		54C152392526C595006A41AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54C152382526C595006A41AE /* Assets.xcassets */; };
 		54C1523C2526C595006A41AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54C1523A2526C595006A41AE /* LaunchScreen.storyboard */; };
 		54C152472526C596006A41AE /* FOIATrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C152462526C596006A41AE /* FOIATrackerTests.swift */; };
 		54C152522526C596006A41AE /* FOIATrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C152512526C596006A41AE /* FOIATrackerUITests.swift */; };
-		54C152692526D476006A41AE /* requestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C152682526D476006A41AE /* requestCell.swift */; };
+		54C152692526D476006A41AE /* RequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C152682526D476006A41AE /* RequestCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,12 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		54774067252FF6AE009EBFFE /* request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = request.swift; sourceTree = "<group>"; };
-		5477406C252FFEEE009EBFFE /* requestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requestService.swift; sourceTree = "<group>"; };
+		54774067252FF6AE009EBFFE /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		5477406C252FFEEE009EBFFE /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
 		54C1522C2526C593006A41AE /* FOIATracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FOIATracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C1522F2526C593006A41AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54C152312526C593006A41AE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		54C152332526C593006A41AE /* foiaRequestListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foiaRequestListController.swift; sourceTree = "<group>"; };
+		54C152332526C593006A41AE /* RequestListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestListViewController.swift; sourceTree = "<group>"; };
 		54C152362526C593006A41AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		54C152382526C595006A41AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54C1523B2526C595006A41AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		54C1524D2526C596006A41AE /* FOIATrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FOIATrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C152512526C596006A41AE /* FOIATrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FOIATrackerUITests.swift; sourceTree = "<group>"; };
 		54C152532526C596006A41AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		54C152682526D476006A41AE /* requestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requestCell.swift; sourceTree = "<group>"; };
+		54C152682526D476006A41AE /* RequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +85,7 @@
 		54774075253002AC009EBFFE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				54C152682526D476006A41AE /* requestCell.swift */,
+				54C152682526D476006A41AE /* RequestCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -93,7 +93,7 @@
 		54774076253002B7009EBFFE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				54C152332526C593006A41AE /* foiaRequestListController.swift */,
+				54C152332526C593006A41AE /* RequestListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -101,8 +101,8 @@
 		54774077253002E8009EBFFE /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				5477406C252FFEEE009EBFFE /* requestService.swift */,
-				54774067252FF6AE009EBFFE /* request.swift */,
+				5477406C252FFEEE009EBFFE /* RequestService.swift */,
+				54774067252FF6AE009EBFFE /* Request.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -291,11 +291,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5477406D252FFEEE009EBFFE /* requestService.swift in Sources */,
-				54C152342526C593006A41AE /* foiaRequestListController.swift in Sources */,
-				54C152692526D476006A41AE /* requestCell.swift in Sources */,
+				5477406D252FFEEE009EBFFE /* RequestService.swift in Sources */,
+				54C152342526C593006A41AE /* RequestListViewController.swift in Sources */,
+				54C152692526D476006A41AE /* RequestCell.swift in Sources */,
 				54C152302526C593006A41AE /* AppDelegate.swift in Sources */,
-				54774068252FF6AE009EBFFE /* request.swift in Sources */,
+				54774068252FF6AE009EBFFE /* Request.swift in Sources */,
 				54C152322526C593006A41AE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

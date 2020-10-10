@@ -7,10 +7,17 @@
 
 import UIKit
 
-class requestCell: UITableViewCell {
-    
+class RequestCell: UITableViewCell {
     @IBOutlet weak var requestLabel: UILabel!
     @IBOutlet weak var requestDescription: UILabel!
+    
+    var request: Request? {
+        didSet {
+            self.requestLabel.text = request?.department
+            self.requestDescription.text = request?.description
+            self.accessoryType = request!.receivedResponse ? .checkmark : .none
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
