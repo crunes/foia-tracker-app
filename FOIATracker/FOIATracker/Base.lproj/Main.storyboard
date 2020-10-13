@@ -108,6 +108,14 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Y5y-wM-VJ7">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <color key="tintColor" systemColor="systemBackgroundColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" systemColor="systemBackgroundColor"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" systemColor="systemBackgroundColor"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
