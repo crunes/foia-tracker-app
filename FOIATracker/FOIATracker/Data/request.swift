@@ -7,15 +7,20 @@
 
 import Foundation
 
-class Request {
+class Request: CustomDebugStringConvertible {
+    var debugDescription: String {
+        return "Request[name: \(self.department), description: \(self.description)]"
+    }
+    
     var department: String
     var description: String
     var receivedResponse: Bool = false
     
-    init(for department: String, description: String, receivedResponse: Bool) {
+    init(for department: String, description: String) {
         self.department = department
         self.description = description
-        self.receivedResponse = receivedResponse
+        //self.receivedResponse = receivedResponse
+        
     }
 }
 

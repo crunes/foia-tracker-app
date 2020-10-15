@@ -40,13 +40,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2ZD-2O-Xdj">
                                                     <rect key="frame" x="103" y="16" width="160.5" height="58.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Request ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47Y-5y-Q6d" userLabel="requestLabel">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Request ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47Y-5y-Q6d" userLabel="requestLabel">
                                                             <rect key="frame" x="0.0" y="0.0" width="160.5" height="29"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Request description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIl-eT-REU" userLabel="requestDescription">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Request description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIl-eT-REU" userLabel="requestDescription">
                                                             <rect key="frame" x="0.0" y="37" width="160.5" height="21.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <nil key="textColor"/>
@@ -90,10 +90,10 @@
             </objects>
             <point key="canvasLocation" x="1844.9275362318842" y="121.875"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="2nH-rb-Xr0">
             <objects>
-                <viewController id="y3V-uc-uKb" sceneMemberID="viewController">
+                <viewController id="y3V-uc-uKb" customClass="DetailViewController" customModule="FOIATracker" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="3Yh-ml-NfC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oya-C2-1hG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

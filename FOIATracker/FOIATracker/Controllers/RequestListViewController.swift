@@ -25,6 +25,17 @@ class RequestListViewController: UIViewController {
         self.tableView.delegate = self
         
         }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? DetailViewController {
+            if let selectedIndexPath = self.tableView.indexPathForSelectedRow {
+                if let confirmedCell = self.tableView.cellForRow(at: selectedIndexPath) as? RequestCell {
+                    let confirmedRequest = confirmedCell.request
+                    destination.request = confirmedRequest
+                }
+            }
+        }
+    }
 }
 
 extension RequestListViewController: UITableViewDataSource {
