@@ -27,16 +27,18 @@ class RequestListViewController: UIViewController {
         }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? DetailViewController {
-            if let selectedIndexPath = self.tableView.indexPathForSelectedRow {
-                if let confirmedCell = self.tableView.cellForRow(at: selectedIndexPath) as? RequestCell {
-                    let confirmedRequest = confirmedCell.request
-                    destination.request = confirmedRequest
-                }
-            }
+        guard
+            let destination = segue.destination as? DetailViewController,
+            let selectedIndexPath = self.tableView.indexPathForSelectedRow,
+            let confirmedCell = self.tableView.cellForRow(at: selectedIndexPath) as? RequestCell
+            else { return }
+        
+        let confirmedRequest = confirmedCell.request
+        destination.request = confirmedRequest
+        
         }
-    }
 }
+
 
 extension RequestListViewController: UITableViewDataSource {
     //MARK: DataSource
