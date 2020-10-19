@@ -16,11 +16,13 @@ class Request: CustomDebugStringConvertible {
     var description: String
     var imageUrl: String
     var receivedResponse: Bool = false
+    var story: String
     
-    init(for department: String, description: String, imageUrl: String) {
+    init(for department: String, description: String, imageUrl: String, story: String) {
         self.department = department
         self.description = description
         self.imageUrl = imageUrl
+        self.story = story
         //self.receivedResponse = receivedResponse
         
     }

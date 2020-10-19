@@ -8,14 +8,21 @@
 import UIKit
 
 class RequestCell: UITableViewCell {
+    
     @IBOutlet weak var requestLabel: UILabel!
     @IBOutlet weak var requestDescription: UILabel!
     @IBOutlet weak var requestImageView: UIImageView!
+    
+    var requestStory: String = ""
+    var requestResponse: String = ""
     
     var request: Request? {
         didSet {
             self.requestLabel.text = request?.department
             self.requestDescription.text = request?.description
+            self.requestDescription.numberOfLines = 0
+            self.requestStory = request?.story ?? ""
+            self.requestResponse = request?.receivedResponse.description ?? ""
             self.accessoryType = .none
             
             DispatchQueue.global(qos: .userInitiated).async {
