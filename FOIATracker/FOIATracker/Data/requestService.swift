@@ -14,7 +14,7 @@ enum RequestCallingError: Error {
 }
 
 class RequestService {
-    private let urlString = "https://run.mocky.io/v3/ac732df1-7bf5-4d6e-9e65-d421d497b8fc"
+    private let urlString = "https://run.mocky.io/v3/697a647c-a411-4357-9335-5ffd2e7f2f78"
     
     func getRequests(completion: @escaping ([Request]?, Error?) -> ()) {
         guard let url = URL(string: self.urlString) else {

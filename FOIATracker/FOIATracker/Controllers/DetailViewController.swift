@@ -33,6 +33,8 @@ class DetailViewController: UIViewController {
         
         self.imageView.image = self.image
         
+        // To-do: Figure out how to resize images or get images of uniform size!
+        
         // Do any additional setup after loading the view.
         // print(request)
     }
