@@ -42,7 +42,10 @@ class RequestListViewController: UIViewController {
             else { return }
         
         let confirmedRequest = confirmedCell.request
+        let confirmedImageView = confirmedCell.requestImageView
+        
         destination.request = confirmedRequest
+        destination.image = confirmedImageView?.image
         
         }
 }

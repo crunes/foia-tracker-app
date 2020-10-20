@@ -10,6 +10,7 @@ import UIKit
 class DetailViewController: UIViewController {
     
     var request: Request!
+    var image: UIImage!
 
     @IBOutlet weak var departmentLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -21,16 +22,19 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
 
         self.departmentLabel.text = self.request.department
+        
         self.descriptionLabel.text = self.request.description
         self.descriptionLabel.numberOfLines = 0
+        
         self.storyLabel.text = self.request.story
         self.storyLabel.numberOfLines = 0
-        self.responseLabel.text = self.request.receivedResponse.description
-        //self.imageView = self.request.imageUrl
         
+        self.responseLabel.text = self.request.receivedResponse.description
+        
+        self.imageView.image = self.image
         
         // Do any additional setup after loading the view.
-        print(request)
+        // print(request)
     }
     
 
