@@ -19,7 +19,15 @@ class RequestListViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         self.requestService = RequestService()
-        self.requests = self.requestService.getRequests()
+        
+        // Pass in completion handler - can no longer diretcly get an array of requests
+        self.requestService.getRequests(completion: { requests, error in
+            guard let requests = requests, error == nil else {
+                return
+            }
+            self.requests = requests
+            self.tableView.reloadData()
+        })
         
         self.tableView.dataSource = self
         self.tableView.delegate = self

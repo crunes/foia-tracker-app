@@ -7,69 +7,41 @@
 
 import Foundation
 
+enum RequestCallingError: Error {
+    case problemGeneratingURL
+    case problemGettingDataFromAPI
+    case problemDecodingData
+}
+
 class RequestService {
-    func getRequests() -> [Request] {
-        return [
-            Request(for: "Chicago 311",
-                    description: "All complaints related to potholes",
-                    imageUrl: "https://design.chicago.gov/assets/img/logo/CHI311-h.png",
-                    story: "Potholes and bike accidents on the South Side"),
-            Request(for: "Chicago 311",
-                    description: "All complaints related to potholes",
-                    imageUrl: "https://design.chicago.gov/assets/img/logo/CHI311-h.png",
-                    story: "Potholes and bike accidents on the South Side"),
-            Request(for: "Chicago 311",
-                    description: "All complaints related to potholes",
-                    imageUrl: "https://design.chicago.gov/assets/img/logo/CHI311-h.png",
-                    story: "Potholes and bike accidents on the South Side"),
-            Request(for: "Chicago 311",
-                    description: "All complaints related to potholes",
-                    imageUrl: "https://design.chicago.gov/assets/img/logo/CHI311-h.png",
-                    story: "Potholes and bike accidents on the South Side"),
-            Request(for: "Chicago 311",
-                    description: "All complaints related to potholes",
-                    imageUrl: "https://design.chicago.gov/assets/img/logo/CHI311-h.png",
-                    story: "Potholes and bike accidents on the South Side"),
-            Request(for: "Chicago 311",
-                    description: "All complaints related to potholes",
-                    imageUrl: "https://design.chicago.gov/assets/img/logo/CHI311-h.png",
-                    story: "Potholes and bike accidents on the South Side"),
-            Request(for: "Chicago 311",
-                    description: "All complaints related to potholes",
-                    imageUrl: "https://design.chicago.gov/assets/img/logo/CHI311-h.png",
-                    story: "Potholes and bike accidents on the South Side"),
-            Request(for: "Chicago 311",
-                    description: "All complaints related to potholes",
-                    imageUrl: "https://design.chicago.gov/assets/img/logo/CHI311-h.png",
-                    story: "Potholes and bike accidents on the South Side"),
-            Request(for: "Chicago 311",
-                    description: "All complaints related to potholes",
-                    imageUrl: "https://design.chicago.gov/assets/img/logo/CHI311-h.png",
-                    story: "Potholes and bike accidents on the South Side"),
-            Request(for: "Chicago 311",
-                    description: "All complaints related to potholes",
-                    imageUrl: "https://design.chicago.gov/assets/img/logo/CHI311-h.png",
-                    story: "Potholes and bike accidents on the South Side"),
-            Request(for: "Chicago 311",
-                    description: "All complaints related to potholes",
-                    imageUrl: "https://design.chicago.gov/assets/img/logo/CHI311-h.png",
-                    story: "Potholes and bike accidents on the South Side"),
-            Request(for: "Chicago 311",
-                    description: "All complaints related to potholes",
-                    imageUrl: "https://design.chicago.gov/assets/img/logo/CHI311-h.png",
-                    story: "Potholes and bike accidents on the South Side"),
-            Request(for: "Chicago 311",
-                    description: "All complaints related to potholes",
-                    imageUrl: "https://design.chicago.gov/assets/img/logo/CHI311-h.png",
-                    story: "Potholes and bike accidents on the South Side"),
-            Request(for: "Chicago 311",
-                    description: "All complaints related to potholes",
-                    imageUrl: "https://design.chicago.gov/assets/img/logo/CHI311-h.png",
-                    story: "Potholes and bike accidents on the South Side"),
-            Request(for: "Chicago 311",
-                    description: "All complaints related to potholes",
-                    imageUrl: "https://design.chicago.gov/assets/img/logo/CHI311-h.png",
-                    story: "Potholes and bike accidents on the South Side")
-        ]
+    private let urlString = "https://run.mocky.io/v3/ac732df1-7bf5-4d6e-9e65-d421d497b8fc"
+    
+    func getRequests(completion: @escaping ([Request]?, Error?) -> ()) {
+        guard let url = URL(string: self.urlString) else {
+            DispatchQueue.main.async { completion(nil,
+                RequestCallingError.problemGeneratingURL) }
+            return
+        }
+        
+        let urlRequest = URLRequest(url: url)
+        let task = URLSession.shared.dataTask(with: urlRequest) { data,
+            response, error in
+            guard let data = data, error == nil else {
+                DispatchQueue.main.async { completion(nil,
+                    RequestCallingError.problemGettingDataFromAPI) }
+                return
+            }
+            
+            do {
+                let requestResult = try JSONDecoder().decode(RequestResult.self, from: data)
+                DispatchQueue.main.async { completion(requestResult.requests, nil)}
+            } catch (let error) {
+                print(error)
+                DispatchQueue.main.async { completion(nil, RequestCallingError.problemDecodingData) }
+            }
+            
+        }
+        task.resume()
+
     }
 }

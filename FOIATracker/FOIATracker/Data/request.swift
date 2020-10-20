@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Request: CustomDebugStringConvertible {
+class Request: CustomDebugStringConvertible, Codable {
     var debugDescription: String {
         return "Request[name: \(self.department), description: \(self.description)]"
     }
@@ -15,8 +15,13 @@ class Request: CustomDebugStringConvertible {
     var department: String
     var description: String
     var imageUrl: String
-    var receivedResponse: Bool = false
     var story: String
+    
+    var receivedResponse: Bool = false
+    
+    private enum CodingKeys: String, CodingKey {
+        case department, description, imageUrl, story
+    }
     
     init(for department: String, description: String, imageUrl: String, story: String) {
         self.department = department
@@ -24,7 +29,10 @@ class Request: CustomDebugStringConvertible {
         self.imageUrl = imageUrl
         self.story = story
         //self.receivedResponse = receivedResponse
-        
     }
+}
+
+struct RequestResult: Codable {
+    let requests: [Request]
 }
 
