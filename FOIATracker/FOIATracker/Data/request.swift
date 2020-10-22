@@ -9,7 +9,7 @@ import Foundation
 
 class Request: CustomDebugStringConvertible, Codable {
     var debugDescription: String {
-        return "Request[name: \(self.department), description: \(self.description)]"
+        return "Request(for: \(self.department), description: \(self.description))"
     }
     
     var department: String

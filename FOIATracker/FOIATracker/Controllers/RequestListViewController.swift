@@ -20,19 +20,24 @@ class RequestListViewController: UIViewController {
         
         self.requestService = RequestService()
         
-        // Pass in completion handler - can no longer diretcly get an array of requests
-        self.requestService.getRequests(completion: { requests, error in
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // This happens after viewDidLoad, before every view appears
+        guard let confirmedService = self.requestService else { return }
+        
+        // Pass in completion handler - can no longer directly get an array of requests
+        confirmedService.getRequests(completion: { requests, error in
             guard let requests = requests, error == nil else {
                 return
             }
             self.requests = requests
             self.tableView.reloadData()
         })
-        
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
-        
-        }
+
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard
