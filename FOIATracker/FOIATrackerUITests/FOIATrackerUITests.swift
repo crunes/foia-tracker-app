@@ -26,9 +26,30 @@ class FOIATrackerUITests: XCTestCase {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
+        
+        app.tables.cells.element(boundBy: 0).tap()
+        
+        let foiaRequestsBackButton = app.navigationBars["FOIATracker.DetailView"].buttons["FOIA Requests"]
+        XCTAssertTrue(foiaRequestsBackButton.exists)
+        
+        foiaRequestsBackButton.tap()
 
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssertFalse(foiaRequestsBackButton.exists)
+
+        app.tables.cells.element(boundBy: 1).tap()
+        XCTAssertTrue(foiaRequestsBackButton.exists)
+        
+        foiaRequestsBackButton.tap()
+
+        XCTAssertFalse(foiaRequestsBackButton.exists)
+        
+        app.tables.cells.element(boundBy: 2).tap()
+        XCTAssertTrue(foiaRequestsBackButton.exists)
+        
+        foiaRequestsBackButton.tap()
+
+        XCTAssertFalse(foiaRequestsBackButton.exists)
+                
     }
 
     func testLaunchPerformance() throws {
