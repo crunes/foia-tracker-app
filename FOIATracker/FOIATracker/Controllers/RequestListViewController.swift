@@ -34,19 +34,31 @@ class RequestListViewController: UIViewController {
         
         confirmedService.getRequests(completion: { requests, error in
             guard let requests = requests, error == nil else {
-                
-                // Set up UIAlertController
-                let alert = UIAlertController(title: "We could not load your FOIA requests", message: "Pull to refresh", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Something went wrong",
+                                              message: "We could not load your FOIA requests",
+                                              preferredStyle: .alert)
 
                 alert.addAction(UIAlertAction(title: "OK",
                                               style: .default,
-                                              handler: { action in print("Trying to fetch data from API again...") }))
+                                              handler: nil))
 
                 self.present(alert, animated: true)
                 
                 return
             }
+            
             self.requests = requests
+            if self.requests.count == 0 {
+
+                let alert = UIAlertController(title: "You have zero FOIA requests", message: "Add a request to start tracking", preferredStyle: .alert)
+
+                alert.addAction(UIAlertAction(title: "OK",
+                                              style: .default,
+                                              handler: nil))
+
+                self.present(alert, animated: true)
+            }
+            
             self.tableView.reloadData()
         })
 
