@@ -28,7 +28,8 @@ class RequestService {
             response, error in
             guard let data = data, error == nil else {
                 DispatchQueue.main.async { completion(nil,
-                    RequestCallingError.problemGettingDataFromAPI) }
+                    RequestCallingError.problemGettingDataFromAPI)
+                }
                 return
             }
             

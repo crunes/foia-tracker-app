@@ -14,23 +14,36 @@ class RequestListViewController: UIViewController {
     var requests: [Request] = []
     var requestService: RequestService!
     
+    private let refreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        // To-do: Set up pull-to-refresh
         
         self.requestService = RequestService()
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        }
-    
+        
+    }
+        
     override func viewWillAppear(_ animated: Bool) {
         // This happens after viewDidLoad, before every view appears
         guard let confirmedService = self.requestService else { return }
         
-        // Pass in completion handler - can no longer directly get an array of requests
         confirmedService.getRequests(completion: { requests, error in
             guard let requests = requests, error == nil else {
+                
+                // Set up UIAlertController
+                let alert = UIAlertController(title: "We could not load your FOIA requests", message: "Pull to refresh", preferredStyle: .alert)
+
+                alert.addAction(UIAlertAction(title: "OK",
+                                              style: .default,
+                                              handler: { action in print("Trying to fetch data from API again...") }))
+
+                self.present(alert, animated: true)
+                
                 return
             }
             self.requests = requests
