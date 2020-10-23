@@ -26,9 +26,14 @@ class RequestCell: UITableViewCell {
             self.accessoryType = .none
             
             DispatchQueue.global(qos: .userInitiated).async {
-                let requestImageData = NSData(contentsOf: URL(string: self.request!.imageUrl)!)
-                DispatchQueue.main.async {
-                    self.requestImageView.image = UIImage(data: requestImageData as! Data)
+                if let requestImageData = NSData(contentsOf: (URL(string: self.request!.imageUrl))!)
+                {
+                  DispatchQueue.main.async {
+                    self.requestImageView.image = UIImage(data: requestImageData as Data)
+                    }
+                } else {
+                    print("imageRequestData is nil")
+                    return
                 }
             }
         }
