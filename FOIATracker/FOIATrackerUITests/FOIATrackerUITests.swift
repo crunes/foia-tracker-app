@@ -1,0 +1,63 @@
+//
+//  FOIATrackerUITests.swift
+//  FOIATrackerUITests
+//
+//  Created by Charmaine Runes on 10/1/20.
+//
+
+import XCTest
+
+class FOIATrackerUITests: XCTestCase {
+
+    override func setUpWithError() throws {
+        // Put setup code here. This method is called before the invocation of each test method in the class.
+
+        // In UI tests it is usually best to stop immediately when a failure occurs.
+        continueAfterFailure = false
+
+        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+    }
+
+    override func tearDownWithError() throws {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    }
+
+    func testExample() throws {
+        // UI tests must launch the application that they test.
+        let app = XCUIApplication()
+        app.launch()
+        
+        app.tables.cells.element(boundBy: 0).tap()
+        
+        let foiaRequestsBackButton = app.navigationBars["FOIATracker.DetailView"].buttons["FOIA Requests"]
+        XCTAssertTrue(foiaRequestsBackButton.exists)
+        
+        foiaRequestsBackButton.tap()
+
+        XCTAssertFalse(foiaRequestsBackButton.exists)
+
+        app.tables.cells.element(boundBy: 1).tap()
+        XCTAssertTrue(foiaRequestsBackButton.exists)
+        
+        foiaRequestsBackButton.tap()
+
+        XCTAssertFalse(foiaRequestsBackButton.exists)
+        
+        app.tables.cells.element(boundBy: 2).tap()
+        XCTAssertTrue(foiaRequestsBackButton.exists)
+        
+        foiaRequestsBackButton.tap()
+
+        XCTAssertFalse(foiaRequestsBackButton.exists)
+                
+    }
+
+    func testLaunchPerformance() throws {
+        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
+            // This measures how long it takes to launch your application.
+            measure(metrics: [XCTApplicationLaunchMetric()]) {
+                XCUIApplication().launch()
+            }
+        }
+    }
+}
