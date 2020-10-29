@@ -73,21 +73,25 @@
       "size" : "40x40"
     },
     {
+      "filename" : "Frame 1@1x.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "76x76"
     },
     {
+      "filename" : "Frame 1@2x (2).png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "76x76"
     },
     {
+      "filename" : "Frame 1@2x (5).png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "83.5x83.5"
     },
     {
+      "filename" : "Frame 1@2x (4).png",
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"

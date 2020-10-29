@@ -14,7 +14,9 @@ class RequestListViewController: UIViewController {
     var requests: [Request] = []
     var requestService: RequestService!
     
-    let spinnerActivityIndicator = SpinnerViewController()
+    //MARK: Spinner
+    let spinnerView = UIActivityIndicatorView(style: .large)
+    
     private let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
@@ -23,15 +25,19 @@ class RequestListViewController: UIViewController {
         // To-do: Set up pull-to-refresh
         
         self.requestService = RequestService()
+        self.tableView.addSubview(self.spinnerView)
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        
+        self.spinnerView.center = self.tableView.center
         
     }
         
     override func viewWillAppear(_ animated: Bool) {
         // This happens after viewDidLoad, before every view appears
         guard let confirmedService = self.requestService else { return }
+        self.spinnerView.startAnimating()
         
         confirmedService.getRequests(completion: { requests, error in
             guard let requests = requests, error == nil else {
@@ -47,6 +53,9 @@ class RequestListViewController: UIViewController {
                 
                 return
             }
+            
+            self.spinnerView.stopAnimating()
+            self.spinnerView.hidesWhenStopped = true
             
             self.requests = requests
             if self.requests.count == 0 {
