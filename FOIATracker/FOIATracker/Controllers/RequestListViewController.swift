@@ -14,6 +14,7 @@ class RequestListViewController: UIViewController {
     var requests: [Request] = []
     var requestService: RequestService!
     
+    let spinnerActivityIndicator = SpinnerViewController()
     private let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {

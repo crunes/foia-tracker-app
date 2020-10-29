@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		54062C772538F3FF00C04D65 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54062C762538F3FF00C04D65 /* DetailViewController.swift */; };
+		5442B08A254B5B2E00321F2F /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5442B089254B5B2E00321F2F /* SpinnerViewController.swift */; };
 		54774068252FF6AE009EBFFE /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54774067252FF6AE009EBFFE /* Request.swift */; };
 		5477406D252FFEEE009EBFFE /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5477406C252FFEEE009EBFFE /* RequestService.swift */; };
 		5493AFAE2542315D0021585C /* RequestServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5493AFAD2542315D0021585C /* RequestServiceTests.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		54062C762538F3FF00C04D65 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5442B089254B5B2E00321F2F /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		54774067252FF6AE009EBFFE /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		5477406C252FFEEE009EBFFE /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
 		5493AFAD2542315D0021585C /* RequestServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestServiceTests.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				54C152332526C593006A41AE /* RequestListViewController.swift */,
 				54062C762538F3FF00C04D65 /* DetailViewController.swift */,
+				5442B089254B5B2E00321F2F /* SpinnerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				54C152342526C593006A41AE /* RequestListViewController.swift in Sources */,
 				54C152692526D476006A41AE /* RequestCell.swift in Sources */,
 				54C152302526C593006A41AE /* AppDelegate.swift in Sources */,
+				5442B08A254B5B2E00321F2F /* SpinnerViewController.swift in Sources */,
 				54774068252FF6AE009EBFFE /* Request.swift in Sources */,
 				54C152322526C593006A41AE /* SceneDelegate.swift in Sources */,
 				54062C772538F3FF00C04D65 /* DetailViewController.swift in Sources */,
