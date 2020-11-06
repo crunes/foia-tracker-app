@@ -13,6 +13,28 @@ class RequestListViewController: UIViewController {
     
     var requests: [Request] = []
     var requestService: RequestService!
+    var filteredRequests: [Request] = []
+    
+    //MARK: Search
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    var isSearchBarEmpty: Bool {
+      return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    var isFiltering: Bool {
+      return searchController.isActive && !isSearchBarEmpty
+    }
+    
+    func filterContentForSearchText(_ searchText: String,
+                                    category: Request? = nil) {
+        self.filteredRequests = self.requests.filter { (request: Request) -> Bool in
+        return request.department.lowercased().contains(searchText.lowercased())
+      }
+      
+      tableView.reloadData()
+    }
+
     
     //MARK: Spinner
     let spinnerView = UIActivityIndicatorView(style: .large)
@@ -23,7 +45,7 @@ class RequestListViewController: UIViewController {
         super.viewDidLoad()
         
         // To-do: Set up pull-to-refresh
-        
+    
         self.requestService = RequestService()
         self.tableView.addSubview(self.spinnerView)
         
@@ -31,6 +53,14 @@ class RequestListViewController: UIViewController {
         self.tableView.delegate = self
         
         self.spinnerView.center = self.tableView.center
+        
+        searchController.searchResultsUpdater = self // Inform class of any text changes
+        searchController.obscuresBackgroundDuringPresentation = false // Current view for search
+        
+        searchController.searchBar.placeholder = "Enter keywords e.g., police"
+        
+        navigationItem.searchController = searchController // Add to the navigationItem
+        definesPresentationContext = true
         
     }
         
@@ -90,17 +120,37 @@ class RequestListViewController: UIViewController {
         }
 }
 
+extension RequestListViewController: UISearchResultsUpdating {
+    //MARK: SearchResults
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        filterContentForSearchText(searchBar.text!)
+    }
+}
+
+
 
 extension RequestListViewController: UITableViewDataSource {
     //MARK: DataSource
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if isFiltering {
+            return self.filteredRequests.count
+        }
+        
         return self.requests.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "request") as! RequestCell
-        let currentRequest = self.requests[indexPath.row]
+        
+        let currentRequest: Request
+        if isFiltering {
+            currentRequest = self.filteredRequests[indexPath.row]
+        } else {
+            currentRequest = self.requests[indexPath.row]
+        }
         
         cell.request = currentRequest
          
