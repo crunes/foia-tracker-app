@@ -9,6 +9,116 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Add Request View Controller-->
+        <scene sceneID="vyw-T5-Cnp">
+            <objects>
+                <viewController id="Jxg-oz-XmZ" customClass="AddRequestViewController" customModule="FOIATracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EYS-Wd-IFx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Meh-kE-Bmm" userLabel="Add Request">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Add Request" id="NfD-F0-YHQ">
+                                        <barButtonItem key="backBarButtonItem" title="Cancel" image="chevron.backward" catalog="system" id="KgK-dH-lx3"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="0ZY-Uh-ofK"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="xFr-0W-jj0"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jgA-BB-lIM">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uJ2-fh-1Zi">
+                                        <rect key="frame" x="16" y="90" width="398" height="243"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Department" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KM9-dl-VNC">
+                                                <rect key="frame" x="0.0" y="0.0" width="113.5" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Public body, department or agency name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BFd-kd-wJT" userLabel="departmentInput">
+                                                <rect key="frame" x="0.0" y="38" width="294" height="34"/>
+                                                <color key="textColor" systemColor="systemGray2Color"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" textContentType="organization"/>
+                                                <connections>
+                                                    <action selector="departmentInput:" destination="BO7-dl-9Cs" eventType="editingDidEnd" id="OAn-I3-E2g"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3G-Nl-eEx">
+                                                <rect key="frame" x="0.0" y="85.5" width="109" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Short description of records e.g., &quot;Body camera footage&quot;" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hgR-t9-IYI" userLabel="descriptionInput">
+                                                <rect key="frame" x="0.0" y="123.5" width="397" height="34"/>
+                                                <color key="textColor" systemColor="systemGray2Color"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Story" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iuk-SD-vSE">
+                                                <rect key="frame" x="0.0" y="171" width="51.5" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Story lede and publication" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yhV-Mn-7I9" userLabel="storyInput">
+                                                <rect key="frame" x="0.0" y="209" width="197" height="34"/>
+                                                <color key="textColor" systemColor="systemGray2Color"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="uJ2-fh-1Zi" firstAttribute="trailing" secondItem="Lgm-Im-B4L" secondAttribute="trailing" constant="-16" id="UKv-Tp-Hn2"/>
+                                    <constraint firstItem="uJ2-fh-1Zi" firstAttribute="width" secondItem="Lgm-Im-B4L" secondAttribute="width" constant="-16" id="dq0-8Z-fvd"/>
+                                    <constraint firstItem="uJ2-fh-1Zi" firstAttribute="bottom" secondItem="Lgm-Im-B4L" secondAttribute="bottom" constant="-475" id="qCc-Lg-3Pe"/>
+                                    <constraint firstItem="uJ2-fh-1Zi" firstAttribute="top" secondItem="Lgm-Im-B4L" secondAttribute="top" constant="90" id="rWC-RS-u20"/>
+                                    <constraint firstItem="uJ2-fh-1Zi" firstAttribute="leading" secondItem="Lgm-Im-B4L" secondAttribute="leading" constant="16" id="wXV-oo-rrX"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="2u7-ro-v6K"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Lgm-Im-B4L"/>
+                                <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="uJ2-fh-1Zi"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="UKv-Tp-Hn2"/>
+                                        <include reference="dq0-8Z-fvd"/>
+                                        <include reference="qCc-Lg-3Pe"/>
+                                        <include reference="rWC-RS-u20"/>
+                                        <include reference="wXV-oo-rrX"/>
+                                    </mask>
+                                </variation>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="z7I-Q4-kGM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jgA-BB-lIM" firstAttribute="trailing" secondItem="EYS-Wd-IFx" secondAttribute="trailing" id="Def-fw-cBL"/>
+                            <constraint firstItem="jgA-BB-lIM" firstAttribute="leading" secondItem="EYS-Wd-IFx" secondAttribute="leading" id="HKo-Vq-D1T"/>
+                            <constraint firstItem="jgA-BB-lIM" firstAttribute="top" secondItem="EYS-Wd-IFx" secondAttribute="top" id="PCI-NF-gxZ"/>
+                            <constraint firstItem="jgA-BB-lIM" firstAttribute="bottom" secondItem="EYS-Wd-IFx" secondAttribute="bottom" constant="-34" id="wHs-6A-3Os"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="departmentInput" destination="BFd-kd-wJT" id="Kt9-Bf-Mpy"/>
+                        <outlet property="descriptionInput" destination="hgR-t9-IYI" id="Bw2-Yo-NvY"/>
+                        <outlet property="storyInput" destination="yhV-Mn-7I9" id="rQA-DM-Rqp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U3e-eC-e25" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="BO7-dl-9Cs" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2634.7826086956525" y="-633.48214285714278"/>
+        </scene>
         <!--Foia Request List Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -19,8 +129,8 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uQD-RM-Oso">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" red="0.89411764709999997" green="0.0" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" red="0.89411764709999997" green="0.0" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.25490196079999999" green="0.73742204899999997" blue="0.86153328419999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.25490196079999999" green="0.73742204899999997" blue="0.86153328419999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="request" rowHeight="90" id="jmA-aE-3CV" userLabel="requestCell" customClass="RequestCell" customModule="FOIATracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="90"/>
@@ -83,7 +193,14 @@
                             <constraint firstAttribute="bottom" secondItem="uQD-RM-Oso" secondAttribute="bottom" id="cfn-f1-cmQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="FOIA Requests" id="rAb-xI-SjA"/>
+                    <navigationItem key="navigationItem" title="FOIA Requests" id="rAb-xI-SjA">
+                        <barButtonItem key="rightBarButtonItem" title="Add" image="plus" catalog="system" id="70i-gV-MgK">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="Jxg-oz-XmZ" kind="presentation" id="Yxx-Wh-d5T"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="uQD-RM-Oso" id="oBC-U1-u6D"/>
                     </connections>
@@ -225,7 +342,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Y5y-wM-VJ7">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.89411764709999997" green="0.0" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.25490196079999999" green="0.73742204899999997" blue="0.86153328419999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.25490196079999999" green="0.71372549019999998" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -247,9 +364,14 @@
     </scenes>
     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="paperplane" catalog="system" width="128" height="118"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

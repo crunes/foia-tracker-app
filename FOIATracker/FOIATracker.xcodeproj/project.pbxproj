@@ -13,6 +13,7 @@
 		5493AFAE2542315D0021585C /* RequestServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5493AFAD2542315D0021585C /* RequestServiceTests.swift */; };
 		5493AFB3254232B70021585C /* RequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5493AFB2254232B70021585C /* RequestTest.swift */; };
 		5493AFB8254237FA0021585C /* RequestListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5493AFB7254237FA0021585C /* RequestListViewControllerTests.swift */; };
+		54AF3C572556167D006E401B /* AddRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AF3C562556167D006E401B /* AddRequestViewController.swift */; };
 		54C152302526C593006A41AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C1522F2526C593006A41AE /* AppDelegate.swift */; };
 		54C152322526C593006A41AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C152312526C593006A41AE /* SceneDelegate.swift */; };
 		54C152342526C593006A41AE /* RequestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C152332526C593006A41AE /* RequestListViewController.swift */; };
@@ -48,6 +49,7 @@
 		5493AFAD2542315D0021585C /* RequestServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestServiceTests.swift; sourceTree = "<group>"; };
 		5493AFB2254232B70021585C /* RequestTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTest.swift; sourceTree = "<group>"; };
 		5493AFB7254237FA0021585C /* RequestListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestListViewControllerTests.swift; sourceTree = "<group>"; };
+		54AF3C562556167D006E401B /* AddRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRequestViewController.swift; sourceTree = "<group>"; };
 		54C1522C2526C593006A41AE /* FOIATracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FOIATracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C1522F2526C593006A41AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54C152312526C593006A41AE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				54C152332526C593006A41AE /* RequestListViewController.swift */,
 				54062C762538F3FF00C04D65 /* DetailViewController.swift */,
+				54AF3C562556167D006E401B /* AddRequestViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 			files = (
 				5477406D252FFEEE009EBFFE /* RequestService.swift in Sources */,
 				54C152342526C593006A41AE /* RequestListViewController.swift in Sources */,
+				54AF3C572556167D006E401B /* AddRequestViewController.swift in Sources */,
 				54C152692526D476006A41AE /* RequestCell.swift in Sources */,
 				54C152302526C593006A41AE /* AppDelegate.swift in Sources */,
 				54774068252FF6AE009EBFFE /* Request.swift in Sources */,
